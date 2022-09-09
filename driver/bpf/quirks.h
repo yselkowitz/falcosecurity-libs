@@ -25,6 +25,10 @@ or GPL2.txt for full copies of the license.
 #error RHEL version must be >= 7.6
 #endif
 
+#if RHEL_RELEASE_CODE >= RHEL_RELEASE_VERSION(8, 0)
+#define BPF_SUPPORTS_RAW_TRACEPOINTS
+#endif
+
 #else /* RHEL_RELEASE_CODE */
 
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 14, 0)
